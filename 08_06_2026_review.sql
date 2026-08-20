@@ -2,7 +2,7 @@ create table student (
     student_id int auto_increment primary key,
     student_first_name varchar(255) not null,
     student_last_name varchar(255) not null,
-    student_course varchar?(255) not null,
+    student_course varchar(255) not null,
 );
 
 create table book (
