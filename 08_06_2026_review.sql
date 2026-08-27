@@ -1,11 +1,11 @@
-create table student (
+create table students (
     student_id int auto_increment primary key,
     student_first_name varchar(255) not null,
     student_last_name varchar(255) not null,
     student_course varchar(255) not null,
 );
 
-create table book (
+create table books (
     book_id int auto_increment primary key,
     book_name varchar(255) not null,
 );
