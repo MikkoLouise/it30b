@@ -1,6 +1,6 @@
 --Find books that are currently borrowed
 SELECT 
-    br.borrow_id,
+     br.borrow_id,
     
 --Student Full Name
     CONCAT(
