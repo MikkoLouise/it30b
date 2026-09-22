@@ -22,7 +22,7 @@ INNER JOIN students s
     ON br.student_id = s.student_id
 
 INNER JOIN books b
-    ON br.book_id = b.book_id
+    ON br.book_id = b.book_id       
 
 WHERE br.borrow_return_date IS NULL
 
