@@ -1,19 +1,19 @@
---Find books that are currently borrowed
+-- Find books that are currently borrowed
 SELECT 
      br.borrow_id,
     
---Student Full Name
+-- Student Full Name
     CONCAT(
         s.student_first_name,'',
         s.student_last_name,','
     ) AS student_name,
 
---Books
+-- Books
 b.book_title,
 b.book_author,
 b.book_category,
 
---Borrow Date
+-- Borrow Date
     br.borrow_date
 
 FROM borrow br

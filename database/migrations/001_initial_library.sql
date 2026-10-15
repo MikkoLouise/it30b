@@ -1,16 +1,16 @@
 CREATE TABLE IF NOT EXISTS students (
-    --Primary key for students table
+    -- Primary key for students table
     student_id INT AUTO_INCREMENT PRIMARY KEY,
 
 
-    --Student Name
+    -- Student Name
     student_first_name VARCHAR(50) NOT NULL,
     student_last_name VARCHAR(50) NOT NULL,
 
-    --Student Course
+    -- Student Course
     student_course VARCHAR(50) NOT NULL,
 
-    --Student created at timestamp  
+    -- Student created at timestamp  
     student_created_at TIMESTAMP NOT NULL
         DEFAULT CURRENT_TIMESTAMP
 
@@ -21,16 +21,16 @@ CREATE TABLE IF NOT EXISTS students (
   -- #2 Books Table
 
   CREATE TABLE IF NOT EXISTS books (
-    --Primary key for books table
+    -- Primary key for books table
     book_id INT AUTO_INCREMENT PRIMARY KEY,
 
-    --Book Details
+    -- Book Details
     book_title VARCHAR(50) NOT NULL,
     book_author VARCHAR(100) NOT NULL,
     book_category VARCHAR(50) NOT NULL,
 
 
-    --Book created at timestamp
+    -- Book created at timestamp
     book_created_at TIMESTAMP NOT NULL
         DEFAULT CURRENT_TIMESTAMP
 
@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS students (
 
 -- #3 Borrow Table
 CREATE TABLE IF NOT EXISTS borrow (
-    --Primary key for borrow table
+    -- Primary key for borrow table
     borrow_id INT AUTO_INCREMENT PRIMARY KEY,
 
-    --Foreign Key
+    -- Foreign Key
     student_id INT NOT NULL,
     book_id INT NOT NULL,
 
