@@ -1,19 +1,19 @@
---Find books that are currently borrowed
+-- Find books that are currently borrowed
 SELECT 
      br.borrow_id,
     
---Student Full Name
+-- Student Full Name
     CONCAT(
         s.student_first_name,'',
         s.student_last_name,','
     ) AS student_name,
 
---Books
+-- Books
 b.book_title,
 b.book_author,
 b.book_category,
 
---Borrow Date
+-- Borrow Date
     br.borrow_date
 
 FROM borrow br
@@ -22,7 +22,7 @@ INNER JOIN students s
     ON br.student_id = s.student_id
 
 INNER JOIN books b
-    ON br.book_id = b.book_id
+    ON br.book_id = b.book_id       
 
 WHERE br.borrow_return_date IS NULL
 
