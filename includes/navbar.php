@@ -27,6 +27,34 @@ while ($row = $catStmt->fetch()) {
     $categoryCounts[] = (int) $row['cnt'];
 }
 
+// ---------- 3. BORROW ACTIVITY LAST 7 DAYS ----------
+
+$dailyStmt = $pdo->query("
+    SELECT DATE(borrow_date) AS day, COUNT(*) AS cnt
+    FROM borrow
+    WHERE borrow_date >= CURDATE() - INTERVAL 6 DAY
+    GROUP BY DATE(borrow_date)
+    ORDER BY day ASC
+");
+
+$borrowByDay = [];
+
+while ($row = $dailyStmt->fetch()) {
+    $borrowByDay[$row['day']] = (int) $row['cnt'];
+}
+
+// Generate labels and counts for the last 7 days
+
+$dayLabels = [];
+$dailyBorrows = [];
+
+for ($i = 6; $i >= 0; $i--) {
+    $date = date('Y-m-d', strtotime("-$i days"));
+
+    $dayLabels[] = date('D', strtotime($date));
+    $dailyBorrows[] = $borrowByDay[$date] ?? 0;
+}
+
 ?>
 
 
@@ -130,22 +158,22 @@ while ($row = $catStmt->fetch()) {
         <a href="index.php?section=dashboard" class="<?= navActive('dashboard', $currentSection) ?>">
             <span class="material-icons">dashboard</span>
             Dashboard
-        <a/>
+</a>
 
         <a href="index.php?section=students" class="<?= navActive('students', $currentSection) ?>">
             <span class="material-icons">people</span>
             Students
-        <a/>
+</a>
 
         <a href="index.php?section=books" class="<?= navActive('books', $currentSection) ?>">
             <span class="material-icons">menu_book</span>
             Books
-        <a/>
+</a>
 
         <a href="index.php?section=borrow" class="<?= navActive('borrow', $currentSection) ?>">
             <span class="material-icons">swap_horiz</span>
             Borrow
-        <a/>
+</a>
     </nav>
 
-<header/>
+</header>
