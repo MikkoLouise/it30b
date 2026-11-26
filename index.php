@@ -397,6 +397,12 @@ if ($section === 'borrow' && $action === 'return') {
     <?php if($section === 'students'):?>
         <h1>Students</h1>
 
+        
+        <hr>    
+<p>
+        <a href="dashboard.php">Back To Dashboard</a>
+
+        </p>
         <p>
             <a href="index.php?section=students&action=create">
                 Add student
@@ -528,6 +534,12 @@ if ($section === 'borrow' && $action === 'return') {
 
     <?php if($section === 'books'):?>
         <h1>Books</h1>
+        <hr>    
+        <p>
+        <a href="dashboard.php">Back To Dashboard</a>
+
+        </p>
+
         <p>
             <a href="index.php?section=books&action=create">
                 Add books
@@ -658,11 +670,19 @@ if ($section === 'borrow' && $action === 'return') {
 
    <?php if($section === 'borrow'):?>
     <h1>Borrow</h1>
+    <hr>            
+    <p>
+        <a href="dashboard.php">Back To Dashboard</a>
+
+        </p>
+        
     <p>
         <a href="index.php?section=borrow&action=create">
             Borrow a Book
         </a>
     </p>
+    
+    
 
     <?php if ($action=='create'): ?>
         <h2>Borrow a Book</h2>
